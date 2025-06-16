@@ -4,13 +4,13 @@ const app=express();
 
 app.use(express.json());
 
-import authroute from './routes/auth.js';
+import auth from './routes/auth.js';
 import { PORT } from './config/config.js';
 
-app.use('/api/authstud',authroute);
+app.use('/api/auth',auth);
 
 app.get('/',(req,res) => {
-	res.send("stud auth is running");
+	res.send("auth is running");
 });
 
 db();
@@ -18,4 +18,3 @@ db();
 app.listen(PORT,() => {
 	console.log(`server running on port ${PORT}`);
 });
-
